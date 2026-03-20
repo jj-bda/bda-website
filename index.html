@@ -1,421 +1,195 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Best Day Advisors, LLC</title>
-    <meta name="description" content="Human-centric and data-driven leadership coaching and management consulting services.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              brand: {
-                900: '#0f172a', // Slate 900
-                800: '#1e293b', // Slate 800
-                accent: '#d97706', // Amber 600
-                light: '#f8fafc', // Slate 50
-              }
-            }
-          }
-        }
-      }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Day Advisors, LLC | Strategy & Coaching</title>
     <style>
-      .text-shadow {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #2563eb; /* Professional Blue */
+            --secondary: #64748b;
+            --light-gray: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--text);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .location {
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            margin-bottom: 4rem;
+            max-width: 600px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--text);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--text);
+            margin-top: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--light-gray);
+            color: var(--text);
+        }
+
+        .cta-section {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer {
+            margin-top: 6rem;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 650px) {
+            header { flex-direction: column; gap: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .container { padding: 2rem 1rem; }
+            .cta-section { padding: 2rem 1rem; }
+        }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
-  }
-}
-</script>
 </head>
-<body class="bg-brand-light text-brand-900 antialiased">
+<body>
 
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center space-x-2 group">
-                        <div class="bg-brand-900 text-white p-2 rounded-lg group-hover:bg-brand-accent transition-colors">
-                            <!-- Briefcase Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                        </div>
-                        <span id="nav-logo-text" class="font-serif font-bold text-xl tracking-tight text-brand-900 lg:text-white">
-                            Best Day Advisors
-                        </span>
-                    </a>
-                </div>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="nav-link text-sm font-medium text-slate-700 lg:text-slate-100 hover:text-brand-accent transition-colors">About</a>
-                    <a href="#services" class="nav-link text-sm font-medium text-slate-700 lg:text-slate-100 hover:text-brand-accent transition-colors">Services</a>
-                    <a href="#engagement" class="nav-link text-sm font-medium text-slate-700 lg:text-slate-100 hover:text-brand-accent transition-colors">Engagement</a>
-                    <a href="#contact" class="nav-link text-sm font-medium text-slate-700 lg:text-slate-100 hover:text-brand-accent transition-colors">Contact</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-800">
-                        <!-- Menu Icon -->
-                        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                        <!-- X Icon (hidden by default) -->
-                        <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                    </button>
-                </div>
-            </div>
+<div class="container">
+    <header>
+        <div class="header-text">
+            <p class="location">Greater Seattle Area</p>
+            <h1>Best Day Advisors, LLC</h1>
         </div>
+        <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn">Book Consult</a>
+    </header>
 
-        <!-- Mobile Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50">About</a>
-                <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50">Services</a>
-                <a href="#engagement" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50">Engagement</a>
-                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <p class="tagline">Providing the strategy, leadership, and operational stability required to turn complex challenges into your organization's best days.</p>
 
-    <!-- Hero Section -->
-    <div id="home" class="relative bg-brand-900 min-h-screen flex items-center overflow-hidden">
-        <!-- Abstract Background Graphic -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
-            </svg>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
-            <div class="lg:w-2/3">
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6">
-                    Data Driven Strategy. <br />
-                    <span class="text-brand-accent">Human Focused Leadership.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                    We help companies modernize their people, processes, and tools. 
-                    Whether you need a fractional CxO to steer the ship or a targeted strategy to navigate change, 
-                    Best Day Advisors is your partner in growth.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-brand-accent hover:bg-amber-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                        Start the Conversation
-                        <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </a>
-                    <a href="#services" class="inline-flex justify-center items-center px-8 py-4 border border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-brand-900 transition-colors">
-                        Explore Services
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm">Who We Are</span>
-            <h2 class="mt-4 text-3xl font-serif font-bold text-brand-900 leading-relaxed">
-                We believe that the best days for your business are ahead. By harmonizing <span class="underline decoration-brand-accent underline-offset-4 decoration-2">human potential</span> with <span class="underline decoration-brand-accent underline-offset-4 decoration-2">data intelligence</span>, we unlock sustainable growth.
-            </h2>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-4">Our Expertise</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                    We bridge the gap between traditional leadership values and modern technological capabilities.
-                </p>
+    <section id="services">
+        <h2>Our Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Strategy Consulting</h3>
+                <p>Available on a project or hourly basis. Core competencies include <strong>Business Strategy, AI and Data Strategy,</strong> and <strong>Digital/Infosec Strategy</strong>. We translate high-level goals into technical roadmaps.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="bg-brand-900 p-6 flex justify-center items-center group-hover:bg-brand-accent transition-colors duration-300">
-                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-900 mb-3">Leadership Coaching</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Empowering executives and managers with human-centric frameworks to lead diverse teams effectively in a digital age.
-                        </p>
-                    </div>
-                </div>
+            <div class="service-card">
+                <h3>Management Coaching</h3>
+                <p>1:1 leadership coaching tailored for everyone from executives to newly minted managers. We dive into your core values and motivations to help you lead with authenticity.</p>
+                <p><small><em>Weekly, monthly, or quarterly sessions. Long-term commitment discounts available.</em></small></p>
+            </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="bg-brand-900 p-6 flex justify-center items-center group-hover:bg-brand-accent transition-colors duration-300">
-                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-900 mb-3">Management Consulting</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Optimizing organizational structures and workflows to eliminate bottlenecks and improve operational agility.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="bg-brand-900 p-6 flex justify-center items-center group-hover:bg-brand-accent transition-colors duration-300">
-                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-900 mb-3">Strategy Services</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Defining clear, actionable roadmaps for business growth, digital transformation, and market expansion.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="bg-brand-900 p-6 flex justify-center items-center group-hover:bg-brand-accent transition-colors duration-300">
-                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-900 mb-3">Data & Tool Modernization</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Implementing modern data stacks and tooling ecosystems to drive evidence-based decision making.
-                        </p>
-                    </div>
-                </div>
+            <div class="service-card">
+                <h3>Fractional COO / CIO</h3>
+                <p>Deploy 25+ years of experience in business operations and technology leadership. Ideal for organizations needing to stabilize operations, execute a turnaround, or shore up IT infrastructure without a full-time hire.</p>
             </div>
         </div>
     </section>
 
-    <!-- Engagement Section -->
-    <section id="engagement" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-4">Engagement Models</h2>
-                <p class="text-lg text-slate-600 max-w-3xl">
-                    Flexible partnership structures designed to fit your organization's current maturity and needs.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-                <!-- Model 1 -->
-                <div class="border border-slate-200 rounded-2xl p-8 hover:border-brand-accent transition-colors relative bg-slate-50">
-                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">
-                        Long Term
-                    </div>
-                    <h3 class="text-2xl font-bold text-brand-900">Retainer Based</h3>
-                    <p class="text-brand-accent font-medium text-lg mb-4">Fractional COO / CDO</p>
-                    <p class="text-slate-600 mb-8 h-16">Ideal for companies needing high-level executive guidance without the full-time headcount cost. We integrate into your team to drive long-term success.</p>
-                    
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Ongoing strategic oversight</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Weekly leadership meetings</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Long-term roadmap execution</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Culture & team building</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Data governance implementation</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Model 2 -->
-                <div class="border border-slate-200 rounded-2xl p-8 hover:border-brand-accent transition-colors relative bg-slate-50">
-                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">
-                        Targeted
-                    </div>
-                    <h3 class="text-2xl font-bold text-brand-900">Project Based</h3>
-                    <p class="text-brand-accent font-medium text-lg mb-4">Time & Materials</p>
-                    <p class="text-slate-600 mb-8 h-16">Perfect for specific initiatives with clear start and end dates. We deliver high-impact results for defined problems.</p>
-                    
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Specific problem solving</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Tool implementation & training</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Process audit & redesign</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Workshop facilitation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-brand-900 mt-0.5 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span class="text-slate-700">Interim management support</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <section class="cta-section">
+        <h3>Ready to stabilize and scale?</h3>
+        <p>Schedule a 15-minute introductory consult to discuss your specific needs.</p>
+        <br>
+        <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn">Schedule New Client Consult</a>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mb-6">Let's Build Your Best Day</h2>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Whether you need a data strategy overhaul or a fractional leader to step in next week, we are ready to listen.
-                    </p>
-                    
-                    <div class="space-y-6">
-                      
-
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full flex items-center justify-center bg-slate-200 text-brand-900 mr-4">
-                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-slate-500 uppercase tracking-wide">Location</p>
-                                <span class="text-xl font-semibold text-brand-900">
-                                    Remote / Nationwide
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Simple Form -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                      <input type="hidden" name="access_key" value="ea94524a-1bff-401b-ad22-ef1140fdf0c4">
-                      <input type="text" name="name" required>
-                      <input type="email" name="email" required>
-                      <textarea name="message" required></textarea>
-                      <button type="submit">Submit Form</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0 text-center md:text-left">
-                <h3 class="text-white text-xl font-serif font-bold mb-2">Best Day Advisors, LLC</h3>
-                <p class="text-sm">Data Driven. Human Focused.</p>
-            </div>
-            
-            <div class="flex space-x-6 mb-6 md:mb-0">
-                <a href="https://www.linkedin.com/in/jasonjudge/" class="hover:text-white transition-colors">LinkedIn</a>
-                            </div>
-
-            <div class="text-sm text-center md:text-right">
-                <p id="copyright"></p>
-                <p>www.bestdayadvisors.com</p>
-            </div>
-        </div>
+    <footer>
+        &copy; 2026 Best Day Advisors, LLC | Redmond, WA
     </footer>
+</div>
 
-    <!-- Vanilla JS Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update Copyright Year
-            document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Best Day Advisors, LLC.`;
-
-            // Mobile Menu Toggle
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const iconMenu = document.getElementById('icon-menu');
-            const iconClose = document.getElementById('icon-close');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            if(btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                    iconMenu.classList.toggle('hidden');
-                    iconClose.classList.toggle('hidden');
-                });
-
-                // Close mobile menu when a link is clicked
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.add('hidden');
-                        iconMenu.classList.remove('hidden');
-                        iconClose.classList.add('hidden');
-                    });
-                });
-            }
-
-            // Navbar Scroll Effect
-            const nav = document.getElementById('navbar');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const navLogoText = document.getElementById('nav-logo-text');
-            
-            const updateNav = () => {
-                if (window.scrollY > 20) {
-                    nav.classList.add('bg-white', 'shadow-md', 'py-2');
-                    nav.classList.remove('bg-transparent', 'py-4');
-                    
-                    // Text Color Dark for Scroll
-                    navLogoText.classList.remove('lg:text-white');
-                    navLogoText.classList.add('text-brand-900');
-                    
-                    navLinks.forEach(link => {
-                        link.classList.remove('lg:text-slate-100');
-                        link.classList.add('text-slate-600');
-                    });
-                    
-                    // Mobile Button Text
-                    if(btn) btn.classList.add('text-slate-800');
-
-                } else {
-                    nav.classList.remove('bg-white', 'shadow-md', 'py-2');
-                    nav.classList.add('bg-transparent', 'py-4');
-
-                    // Text Color Light for Transparent
-                    navLogoText.classList.add('lg:text-white');
-                    navLogoText.classList.remove('text-brand-900');
-
-                    navLinks.forEach(link => {
-                        link.classList.add('lg:text-slate-100');
-                        link.classList.remove('text-slate-600');
-                    });
-                }
-            };
-
-            window.addEventListener('scroll', updateNav);
-            // Initialize on load in case page is refreshed down the page
-            updateNav();
-        });
-    </script>
 </body>
 </html>

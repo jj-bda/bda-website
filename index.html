@@ -9,152 +9,80 @@
     
     <style>
         :root {
-            /* Logo Palette */
-            --logo-deep-purple: #3e3189; /* The dark text color */
-            --logo-teal: #38bfa9;        /* The bright 'Advisors' color */
-            --logo-yellow: #FFD700;      /* The icon color */
+            /* Palette from Logo */
+            --brand-dark: #3e3189;   /* Dark Blue/Purple */
+            --brand-teal: #38bfa9;   /* Teal */
+            --brand-yellow: #FFD700; /* Yellow */
             
-            /* Backgrounds/Body */
-            --bg-body: #3e3189; /* Primary deep blue background */
-            --bg-alt: #4a3b9e;  /* Slightly lighter deep blue for contrast elements */
-            --text-light: #ffffff;
-            --text-muted: #dcd3f5;
+            /* Section Backgrounds */
+            --bg-header: #ffffff;    /* Clean White */
+            --bg-main: #f1f5f9;      /* Sophisticated Cool Gray */
+            --bg-footer: #1e1b4b;    /* Very Dark Blue for grounding */
+            
+            --text-main: #1e293b;
+            --text-muted: #64748b;
         }
 
         body { 
             font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-            background-color: var(--bg-body);
-            color: var(--text-light);
+            background-color: var(--bg-main);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 120px 0;
-            text-align: center;
+        /* Navigation & Header */
+        .navbar {
+            background-color: var(--bg-header);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
         }
 
-        /* Buttons & Accent Colors */
+        /* Buttons - Now using the Dark Blue */
         .btn-primary {
-            background-color: var(--logo-teal);
-            border-color: var(--logo-teal);
-            color: var(--logo-deep-purple);
-            font-weight: 700;
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            transition: all 0.2s ease;
         }
         .btn-primary:hover {
-            background-color: #2ea38f; /* Darker teal for hover */
-            border-color: #2ea38f;
-            color: var(--logo-deep-purple);
+            background-color: var(--brand-teal); /* Switches to teal on hover for "flair" */
+            border-color: var(--brand-teal);
+            color: var(--brand-dark);
+            transform: translateY(-1px);
         }
 
-        .text-accent-teal { color: var(--logo-teal); }
-        .text-accent-yellow { color: var(--logo-yellow); }
-
-        /* Custom Section Divider */
-        .accent-divider {
-            height: 4px; 
-            width: 70px; 
-            background-color: var(--logo-yellow); 
-            margin: 0 auto 1.5rem auto;
+        .hero-section {
+            background-color: var(--bg-header);
+            padding: 100px 0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        /* How We Help Cards */
+        /* Cards */
         .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            border: 2px solid rgba(255,255,255,0.1);
-            background-color: var(--bg-alt); /* Accent deep blue background */
-            color: var(--text-light);
+            background-color: #ffffff;
+            border: none;
+            border-radius: 16px;
             padding: 2.5rem;
-            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,0.3)!important;
-            border-color: var(--logo-teal);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Typography adjustments */
-        .nav-link, .nav-logo { text-decoration: none; color: inherit; }
-        .service-card .card-title { color: var(--logo-teal); font-weight: 700; }
-        .service-card .card-text { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Modern Nav Bar */
-        .navbar-light { background-color: var(--bg-body); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .logo-placeholder { max-height: 50px; } /* Adjust size as needed */
-        
-        /* Modern Footer */
-        footer { border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container d-flex justify-content-between">
-            <a class="nav-logo" href="#">
-                <span class="fs-4 fw-bold">BEST DAY <span style="color:var(--logo-teal)">ADVISORS</span></span>
-                </a>
-            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary px-4 shadow">Book 45-Min Consult</a>
-        </div>
-    </nav>
-
-    <header class="hero-section">
-        <div class="container">
-            <h1 class="display-2 fw-bold mb-4" style="letter-spacing: -2px;">Stabilize. Innovate. <span class="text-accent-teal">Thrive.</span></h1>
-            <p class="lead mb-5 mx-auto" style="max-width: 750px; color: var(--text-muted)">Leveraging 25+ years of cross-functional leadership to guide organizations through operational complexity and technical transformation toward sustained success.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-outline-light btn-lg px-4 fs-6">View Expertise</a>
-                <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-4 fs-6 shadow">Schedule a Consult</a>
-            </div>
-        </div>
-    </header>
-
-    <main class="container py-5" id="services">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold fs-1">How We Help</h2>
-            <div class="accent-divider"></div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card service-card shadow">
-                    <h3 class="card-title h4 mb-3">Strategy Consulting</h3>
-                    <p class="card-text">We define resilient <strong class="text-accent-yellow">Business Strategies</strong>, scalable <strong class="text-accent-yellow">AI and Data Initiatives</strong>, and secure <strong class="text-accent-yellow">Digital/Tech Roadmaps</strong>. Whether project or hourly, we navigate complex landscapes to secure your competitive advantage.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card service-card shadow">
-                    <h3 class="card-title h4 mb-3">Management Coaching</h3>
-                    <p class="card-text">Tailored <strong class="text-accent-yellow">1:1 engagement</strong> from C-suite executives to newly appointed managers. We build leadership capacity by aligning operational objectives with authentic personal values, driving motivation and performance at scale.</p>
-                    <p class="fw-bold mt-auto fs-7" style="color:var(--logo-teal)">Weekly / Monthly / Quarterly engagements available.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card service-card shadow">
-                    <h3 class="card-title h4 mb-3">Fractional COO / CIO / CDO</h3>
-                    <p class="card-text">Deploy <strong class="text-accent-yellow">25+ years of expert operational leadership</strong> on a flexible, part-time basis. Immediate value for organizations requiring technical turnarounds, operational stability, critical infrastructure fortification, or executive-level data strategy.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section class="py-5" style="background-color:var(--bg-alt)">
-        <div class="container text-center py-5">
-            <h2 class="fw-bold display-5 mb-3">Ready to find your path forward?</h2>
-            <p class="text-muted mb-5 mx-auto" style="max-width: 600px;">Initial complimentary 45-minute consultation. Let’s identify and resolve your key impediments to growth.</p>
-            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow fs-5">Book 45-Minute New Client Consult</a>
-        </div>
-    </section>
-
-    <footer class="py-5 text-center small">
-        <div class="container">
-            <p>&copy; 2026 Best Day Advisors, LLC. All rights reserved.</p>
-            <p class="fs-7 text-muted">A dedicated consultancy focusing on technology integration and strategic operational leadership.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        .card-title {
+            color: var(--brand-dark);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+        .card-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--brand-

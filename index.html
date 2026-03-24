@@ -4,192 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Day Advisors, LLC | Strategy & Coaching</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --accent: #2563eb; /* Professional Blue */
-            --secondary: #64748b;
-            --light-gray: #f8fafc;
-            --border: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border-bottom: 2px solid var(--text);
-            padding-bottom: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: -0.02em;
-        }
-
-        .location {
-            color: var(--secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 4rem;
-            max-width: 600px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .services-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .service-card {
-            background: var(--light-gray);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card h3 {
-            margin-top: 0;
-            color: var(--accent);
-            font-size: 1.3rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--text);
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.2s;
-            text-align: center;
+            padding: 100px 0;
         }
-
-        .btn:hover {
-            background: var(--accent);
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            border-bottom: 4px solid #2563eb;
         }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--text);
-            margin-top: 1rem;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
         }
-
-        .btn-outline:hover {
-            background: var(--light-gray);
-            color: var(--text);
-        }
-
-        .cta-section {
-            background: var(--light-gray);
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        footer {
-            margin-top: 6rem;
-            font-size: 0.85rem;
-            color: var(--secondary);
-            text-align: center;
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-        }
-
-        @media (max-width: 650px) {
-            header { flex-direction: column; gap: 1.5rem; }
-            h1 { font-size: 2rem; }
-            .container { padding: 2rem 1rem; }
-            .cta-section { padding: 2rem 1rem; }
-        }
+        .navbar-brand { font-weight: 700; letter-spacing: -0.5px; }
+        .sticky-top { backdrop-filter: blur(10px); background-color: rgba(255,255,255,0.9); }
     </style>
 </head>
-<body>
+<body class="bg-light">
 
-<div class="container">
-    <header>
-        <div class="header-text">
-            <p class="location">Greater Seattle Area</p>
-            <h1>Best Day Advisors, LLC</h1>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand text-primary" href="#">BEST DAY ADVISORS</a>
+            <div class="ms-auto">
+                <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary fw-bold px-4">Book Consult</a>
+            </div>
         </div>
-        <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn">Book Consult</a>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container text-center">
+            <p class="text-uppercase tracking-widest fw-bold opacity-75 mb-2" style="letter-spacing: 2px;">Redmond, WA &bull; Greater Seattle Area</p>
+            <h1 class="display-3 fw-bold mb-4">Strategic Leadership for Your Organization's Best Days</h1>
+            <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 700px;">Over 25 years of experience in business operations and technology leadership to help you stabilize, scale, and lead with purpose.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#services" class="btn btn-outline-light btn-lg px-4">Our Expertise</a>
+                <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-4">Schedule a Call</a>
+            </div>
+        </div>
     </header>
 
-    <p class="tagline">Providing the strategy, leadership, and operational stability required to turn complex challenges into your organization's best days.</p>
+    <main class="container py-5" id="services">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How We Help</h2>
+            <div class="mx-auto bg-primary mb-3" style="height: 4px; width: 50px;"></div>
+        </div>
 
-    <section id="services">
-        <h2>Our Expertise</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Strategy Consulting</h3>
-                <p>Available on a project or hourly basis. Core competencies include <strong>Business Strategy, AI and Data Strategy,</strong> and <strong>Digital/Infosec Strategy</strong>. We translate high-level goals into technical roadmaps.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card shadow-sm p-4">
+                    <div class="mb-3"><i class="bi bi-diagram-3 fs-1 text-primary"></i></div>
+                    <h3 class="h5 fw-bold">Strategy Consulting</h3>
+                    <p class="text-muted small">Project or hourly-based engagements focusing on Business, AI/Data, and Digital/Infosec strategies. We turn technical complexity into clear competitive advantages.</p>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Management Coaching</h3>
-                <p>1:1 leadership coaching tailored for everyone from executives to newly minted managers. We dive into your core values and motivations to help you lead with authenticity.</p>
-                <p><small><em>Weekly, monthly, or quarterly sessions. Long-term commitment discounts available.</em></small></p>
+            <div class="col-md-4">
+                <div class="card service-card shadow-sm p-4">
+                    <div class="mb-3"><i class="bi bi-person-up fs-1 text-primary"></i></div>
+                    <h3 class="h5 fw-bold">Management Coaching</h3>
+                    <p class="text-muted small">1:1 leadership coaching for everyone from executives to new managers. We align your core values with your professional leadership style.</p>
+                    <p class="badge bg-light text-dark border fw-normal mt-auto">Weekly / Monthly / Quarterly</p>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Fractional COO / CIO</h3>
-                <p>Deploy 25+ years of experience in business operations and technology leadership. Ideal for organizations needing to stabilize operations, execute a turnaround, or shore up IT infrastructure without a full-time hire.</p>
+            <div class="col-md-4">
+                <div class="card service-card shadow-sm p-4">
+                    <div class="mb-3"><i class="bi bi-briefcase fs-1 text-primary"></i></div>
+                    <h3 class="h5 fw-bold">Fractional COO / CIO</h3>
+                    <p class="text-muted small">25+ years of operational excellence. Temporary or part-time leadership to stabilize operations, drive turnarounds, or shore up critical IT infrastructure.</p>
+                </div>
             </div>
+        </div>
+    </main>
+
+    <section class="bg-white py-5 border-top border-bottom">
+        <div class="container text-center py-4">
+            <h2 class="fw-bold mb-3">Ready to Start?</h2>
+            <p class="text-muted mb-4">Initial 15-minute consultations are complimentary. Let's find your path forward.</p>
+            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow">Book New Client Consult</a>
         </div>
     </section>
 
-    <section class="cta-section">
-        <h3>Ready to stabilize and scale?</h3>
-        <p>Schedule a 15-minute introductory consult to discuss your specific needs.</p>
-        <br>
-        <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn">Schedule New Client Consult</a>
-    </section>
-
-    <footer>
-        &copy; 2026 Best Day Advisors, LLC | Redmond, WA
+    <footer class="py-4 text-center text-muted small">
+        <div class="container">
+            <p>&copy; 2026 Best Day Advisors, LLC. All rights reserved.</p>
+            <p>Based in Redmond, WA &bull; Serving the Greater Seattle Area</p>
+        </div>
     </footer>
-</div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

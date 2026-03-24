@@ -27,37 +27,81 @@
             margin: 0;
         }
 
-        .navbar { background-color: var(--bg-header); border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
-        .btn-primary { background-color: var(--brand-dark); border-color: var(--brand-dark); font-weight: 600; padding: 0.6rem 1.5rem; border-radius: 8px; }
-        .btn-primary:hover { background-color: var(--brand-teal); border-color: var(--brand-teal); color: var(--brand-dark); }
-        .hero-section { background-color: var(--bg-header); padding: 100px 0; border-bottom: 1px solid #e2e8f0; }
-        .service-card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; height: 100%; transition: all 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: var(--brand-teal); }
+        /* Simplified Header - Logo Only */
+        .navbar { 
+            background-color: var(--bg-header); 
+            border-bottom: 1px solid #e2e8f0; 
+            padding: 1.5rem 0; 
+        }
+        
+        .btn-primary { 
+            background-color: var(--brand-dark); 
+            border-color: var(--brand-dark); 
+            font-weight: 600; 
+            padding: 0.8rem 2rem; 
+            border-radius: 8px; 
+        }
+        .btn-primary:hover { 
+            background-color: var(--brand-teal); 
+            border-color: var(--brand-teal); 
+            color: var(--brand-dark); 
+        }
+
+        .hero-section { 
+            background-color: var(--bg-header); 
+            padding: 120px 0; 
+            border-bottom: 1px solid #e2e8f0; 
+        }
+
+        .service-card { 
+            background-color: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 12px; 
+            padding: 2.5rem; 
+            height: 100%; 
+            transition: all 0.3s ease; 
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); 
+            border-color: var(--brand-teal); 
+        }
+
         .card-title { color: var(--brand-dark); font-weight: 700; margin-bottom: 1rem; }
         .card-accent { width: 40px; height: 3px; background-color: var(--brand-yellow); margin-bottom: 1.5rem; }
+        
         footer { background-color: var(--bg-footer); color: #f8fafc; padding: 4rem 0; }
-        .logo-img { max-height: 50px; display: block; }
+        .logo-img { max-height: 65px; width: auto; display: block; margin: 0 auto; }
+        
         .social-link { color: var(--brand-teal); font-size: 1.5rem; transition: opacity 0.2s; }
         .social-link:hover { opacity: 0.8; color: #ffffff; }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 80px 0; }
+            .display-3 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar sticky-top">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-center">
             <a href="#" style="text-decoration: none;">
                 <img src="logo.png" alt="Best Day Advisors" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="fs-4 fw-bold" style="display:none; color: var(--brand-dark)">Best Day <span style="color: var(--brand-teal)">Advisors</span></span>
+                <span class="fs-3 fw-bold" style="display:none; color: var(--brand-dark)">Best Day <span style="color: var(--brand-teal)">Advisors</span></span>
             </a>
-            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary shadow-sm">Book 45-Min Consult</a>
         </div>
     </nav>
 
     <header class="hero-section">
         <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4" style="color: var(--brand-dark); letter-spacing: -1px;">Stabilize. Innovate. <span style="color: var(--brand-teal)">Thrive.</span></h1>
-            <p class="lead mb-5 mx-auto text-muted" style="max-width: 800px;">Leveraging 25+ years of operational excellence and technology leadership to guide organizations through complexity toward sustained success.</p>
-            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow">Schedule a Consult</a>
+            <h1 class="display-3 fw-bold mb-4" style="color: var(--brand-dark); letter-spacing: -1.5px;">
+                People Focused Leadership.<br><span style="color: var(--brand-teal)">Data Driven Results.</span>
+            </h1>
+            <p class="lead mb-5 mx-auto text-muted" style="max-width: 800px;">
+                Translating over 25 years of operational complexity and technology leadership into strategic stability and your organization's next best day.
+            </p>
+            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow">Schedule a Consultation</a>
         </div>
     </header>
 
@@ -67,28 +111,28 @@
                 <div class="service-card">
                     <h3 class="card-title">Strategy Consulting</h3>
                     <div class="card-accent"></div>
-                    <p class="text-muted">High-level planning for <strong>Business, AI/Data, and Digital Strategy</strong>. We turn technical complexity into clear competitive advantages.</p>
+                    <p class="text-muted">High-level strategic planning for <strong>Business, AI/Data, and Infosec roadmaps</strong>. We turn technical debt and complexity into clear competitive advantages.</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="service-card">
                     <h3 class="card-title">Management Coaching</h3>
                     <div class="card-accent"></div>
-                    <p class="text-muted">1:1 development for executives and managers. Aligning leadership style with core values for high-performance outcomes.</p>
+                    <p class="text-muted">1:1 development for executives and emerging leaders. We align leadership capacity with core personal values to drive authentic high performance.</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="service-card">
-                    <h3 class="card-title">Fractional COO/CIO/CDO</h3>
+                    <h3 class="card-title">Fractional COO / CIO / CDO</h3>
                     <div class="card-accent"></div>
-                    <p class="text-muted">Expert operational leadership on demand. Stabilizing infrastructure and driving data transformation with 25+ years of experience.</p>
+                    <p class="text-muted">Immediate executive-level operational support. From stabilizing infrastructure to driving data transformation with 25+ years of cross-functional experience.</p>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white p-5 text-center rounded-4 border shadow-sm">
-            <h2 class="fw-bold mb-3" style="color: var(--brand-dark)">Ready to find your path forward?</h2>
-            <p class="text-muted mb-4">Initial 45-minute consultations are complimentary.</p>
+        <div class="bg-white p-5 text-center rounded-4 border shadow-sm mt-5">
+            <h2 class="fw-bold mb-3" style="color: var(--brand-dark)">Ready to define your path forward?</h2>
+            <p class="text-muted mb-4">Initial 45-minute consultations are complimentary. Let’s discuss your specific operational challenges.</p>
             <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow">Book New Client Consult</a>
         </div>
     </main>
@@ -107,5 +151,6 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

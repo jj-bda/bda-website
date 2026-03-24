@@ -9,50 +9,42 @@
     
     <style>
         :root {
-            /* Palette from Logo */
-            --brand-dark: #3e3189;   /* Dark Blue/Purple */
-            --brand-teal: #38bfa9;   /* Teal */
-            --brand-yellow: #FFD700; /* Yellow */
-            
-            /* Section Backgrounds */
-            --bg-header: #ffffff;    /* Clean White */
-            --bg-main: #f1f5f9;      /* Sophisticated Cool Gray */
-            --bg-footer: #1e1b4b;    /* Very Dark Blue for grounding */
-            
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --brand-dark: #3e3189;
+            --brand-teal: #38bfa9;
+            --brand-yellow: #FFD700;
+            --bg-header: #ffffff;
+            --bg-main: #f8fafc; /* Lighter gray for a cleaner look */
+            --bg-footer: #1e1b4b;
         }
 
         body { 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
+            color: #1e293b;
+            margin: 0;
         }
 
-        /* Navigation & Header */
+        /* Navigation */
         .navbar {
             background-color: var(--bg-header);
             border-bottom: 1px solid #e2e8f0;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
         }
 
-        /* Buttons - Now using the Dark Blue */
         .btn-primary {
             background-color: var(--brand-dark);
             border-color: var(--brand-dark);
-            color: #ffffff;
             font-weight: 600;
             padding: 0.6rem 1.5rem;
-            transition: all 0.2s ease;
-        }
-        .btn-primary:hover {
-            background-color: var(--brand-teal); /* Switches to teal on hover for "flair" */
-            border-color: var(--brand-teal);
-            color: var(--brand-dark);
-            transform: translateY(-1px);
         }
 
+        .btn-primary:hover {
+            background-color: var(--brand-teal);
+            border-color: var(--brand-teal);
+            color: var(--brand-dark);
+        }
+
+        /* Hero */
         .hero-section {
             background-color: var(--bg-header);
             padding: 100px 0;
@@ -62,27 +54,114 @@
         /* Cards */
         .service-card {
             background-color: #ffffff;
-            border: none;
-            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             padding: 2.5rem;
             height: 100%;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-teal);
         }
 
         .card-title {
             color: var(--brand-dark);
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            position: relative;
+            margin-bottom: 1rem;
         }
-        .card-title::after {
-            content: "";
-            display: block;
+
+        .card-accent {
             width: 40px;
             height: 3px;
-            background-color: var(--brand-
+            background-color: var(--brand-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-footer);
+            color: #f8fafc;
+            padding: 4rem 0;
+        }
+
+        /* Image handling */
+        .logo-img { 
+            max-height: 50px; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" style="text-decoration: none;">
+                <img src="logo.png" alt="" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="fs-4 fw-bold" style="display:none; color: var(--brand-dark)">
+                    Best Day <span style="color: var(--brand-teal)">Advisors</span>
+                </span>
+            </a>
+            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary">Book 45-Min Consult</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4" style="color: var(--brand-dark);">
+                Stabilize. Innovate. <span style="color: var(--brand-teal)">Thrive.</span>
+            </h1>
+            <p class="lead mb-5 mx-auto text-muted" style="max-width: 800px;">
+                Leveraging 25+ years of operational excellence and technology leadership to guide organizations through complexity toward sustained success.
+            </p>
+            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5 shadow">Schedule a Consult</a>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <div class="service-card">
+                    <h3 class="card-title">Strategy Consulting</h3>
+                    <div class="card-accent"></div>
+                    <p class="text-muted">High-level planning for <strong>Business, AI/Data, and Digital Strategy</strong>. We turn technical complexity into clear competitive advantages.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="service-card">
+                    <h3 class="card-title">Management Coaching</h3>
+                    <div class="card-accent"></div>
+                    <p class="text-muted">1:1 development for executives and managers. Aligning leadership style with core values for high-performance outcomes.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="service-card">
+                    <h3 class="card-title">Fractional COO/CIO/CDO</h3>
+                    <div class="card-accent"></div>
+                    <p class="text-muted">Expert operational leadership on demand. Stabilizing infrastructure and driving data transformation with 25+ years of experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-5 text-center rounded-4 border shadow-sm">
+            <h2 class="fw-bold mb-3" style="color: var(--brand-dark)">Ready to find your path forward?</h2>
+            <p class="text-muted mb-4">Initial 45-minute consultations are complimentary.</p>
+            <a href="https://calendar.app.google/8PeETMDPYH99JkyT8" class="btn btn-primary btn-lg px-5">Book New Client Consult</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="fw-bold fs-4 mb-2">Best Day <span style="color: var(--brand-teal)">Advisors</span></p>
+            <p class="small opacity-75 mb-4">Strategic Leadership & Technology Operations Consulting</p>
+            <hr class="border-secondary opacity-25">
+            <p class="mt-4 small opacity-50">&copy; 2026 Best Day Advisors, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
